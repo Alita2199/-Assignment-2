@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Pagination</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      margin: 10px;
+    }
+    .pagination {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .pagination a {
+      margin: 0 5px;
+      padding: 5px 10px;
+      text-decoration: none;
+      border: 1px solid #000;
+      border-radius: 5px;
+    }
+    .pagination a.active {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Gallery with Pagination</h1>
+
+  <div class="gallery">
+    {{#each files}}
+      <img src="/uploads/{{this}}" alt="{{this}}">
+    {{/each}}
+  </div>
+
+  <div class="pagination">
+    {{#each pageNumbers}}
+      <a href="/gallery-pagination?page={{this}}" class="{{#if (eq ../currentPage this)}}active{{/if}}">
+        {{this}}
+      </a>
+    {{/each}}
+  </div>
+
+</body>
+</html>

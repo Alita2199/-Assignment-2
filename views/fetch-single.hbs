@@ -1,0 +1,7 @@
+<h1>Fetch Single Random Image</h1>
+<button id="fetch-button">Fetch Image</button>
+<div id="image-container">
+  {{#each image}}
+    <img src="/uploads/{{this}}" alt="Random Image" style="width:100px; margin:10px;">
+  {{/each}}
+</div>

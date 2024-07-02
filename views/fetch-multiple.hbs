@@ -1,0 +1,11 @@
+
+<h1>Fetch Multiple Random Images</h1>
+<form action="/fetch-multiple" method="GET">
+  <input type="number" name="count" placeholder="Number of images" />
+  <button type="submit">Fetch</button>
+</form>
+<div>
+  {{#each files}}
+    <img src="/uploads/{{this}}" style="width:100px; margin:10px;">
+  {{/each}}
+</div>
